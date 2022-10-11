@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Siêu thị mini</title>
+    <link rel="stylesheet" href="web17.css">
+</head>
+<body>
+<section>
+    <div class="menubar">
+        <div class="header">
+            <div class="navi1">
+            <ul class="navi">
+                <li><a href="#">Trang chủ</a></li>
+                <li><a href="#">Sản phẩm</a></li>
+                <li><a href="#">Giới thiệu</a></li>
+                <li><a href="#">Hỗ trợ</a></li>
+                <li><a href="#">Tin tức</a></li>
+            </ul>
+            <div class="info">
+                <a href="#" class="js-dangnhap">
+                    <i class="fa fa-sign-in" aria-hidden="true"></i>
+                    Đăng nhập
+                </a>
+                <span class="px">|</span>
+                <a href="#" class="js-dangki">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    Đăng kí
+                </a>
+            </div>
+        </div>
+        <div class="clear"></div>
+            <div class="navi2">
+            <div class="search">
+                <input type="text" placeholder="Bạn cần tìm gì...">
+                <div class="ti_search"><i class="fa fa-search" aria-hidden="true"></i></div>
+            </div>
+            <div class="cart">
+                <i class="fa fa-shopping-cart"></i>
+                <p>Giỏ hàng</p>
+                <div class="amount"><p>0</p></div>
+            </div>
+            </div>
+        </div>
+        <div class="login js-login">
+            <div class="login-contain js-logincontain">
+                <div class="login-close js-loginclose">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <header class="login-header">
+                    Đăng nhập
+                </header>
+                <div class="login-body">
+                    <form action="">
+                        <label for="aaa" class="login-lable"></label>
+                        <input type="text" class="login-input" required placeholder="Tên đăng nhập hoặc số điện thoại" id="aaa">
+                        <label for="bbb" class="login-lable"></label>
+                        <input type="password" class="login-input" required placeholder="Mật khẩu" id="bbb">
+                        <p>Thành viên mới? <span style="color:green ;" class="js-transfer2">Đăng kí</span></p>
+                        <button class="login-button">ĐĂNG NHẬP</button>
+                    </form>
+                    
+                </div>
+                <div class="login-footer">
+                    <i>Hoặc đăng nhập với</i>
+                    <br>
+                    <button>
+                        <i class="ti-facebook"></i>
+                        Facebook
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="login js-register">
+            <div class="register-contain js-register-contain">
+                <div class="login-close js-closeregister">
+                    <i class="fa fa-times" aria-hidden="true"></i>
+                </div>
+                <header class="login-header">
+                    ĐĂNG KÍ
+                    <p>Bạn đã là thành viên? <span style="color:green;" class="js-transfer1">Đăng nhập</span> tại đây</p>
+                </header>
+                <div class="register-body">
+                    <form action="">
+                        <label for="aaa" class="login-lable"></label>
+                        <input type="text" class="login-input" required placeholder="Họ và tên" id="aaa">
+                        <label for="bbb" class="login-lable"></label>
+                        <input type="text" class="login-input" required placeholder="Số điện thoại" id="bbb">
+                        <label for="ccc" class="login-lable"></label>
+                        <input type="password" class="login-input" required placeholder="Mật khẩu" id="ccc">
+                        <label for="ddd" class="login-lable"></label>
+                        <input type="password" class="login-input" required placeholder="Xác nhận mật khẩu" id="ddd">
+                        <input type="checkbox" name="" id="checkbox" required>
+                        <label for="checkbox">Tôi đồng ý với <a href="https://www.kaercher.com/vn/ben-trong-kaercher/cong-ty/thong-tin-phap-ly/dieu-khoan-su-dung-website.html">điều khoản sử dụng</a> và <a href="https://leeandtee.vn/chinh-sach-bao-mat.html">chính sách bảo mật</a> của market</label> 
+                        <button class="register-button">ĐĂNG KÍ TÀI KHOẢN</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+     <script>
+        const dangnhap=document.querySelector('.js-dangnhap')
+        const login=document.querySelector('.js-login')
+        const closelogin=document.querySelector('.js-loginclose')
+        const logincontain=document.querySelector('.js-logincontain')
+        const dangki=document.querySelector('.js-dangki')
+        const register=document.querySelector('.js-register')
+        const closeregister=document.querySelector('.js-closeregister')
+        const register_contain=document.querySelector('.js-register-contain')
+        const transfer1=document.querySelector('.js-transfer1')
+        const transfer2=document.querySelector('.js-transfer2')
+        function showlogin()
+        {
+            login.classList.add('open')
+        }
+        function showregister()
+        {
+            register.classList.add('open')
+        }
+        function hidelogin()
+        {
+            login.classList.remove('open')
+        }
+        function hideregister()
+        {
+            register.classList.remove('open')
+        }
+        function showloginn()
+        {
+            register.classList.remove('open')
+            login.classList.add('open')
+        }
+        function showloginnn(){
+            login.classList.remove('open')
+            register.classList.add('open')
+        }
+        dangnhap.addEventListener('click',showlogin)
+        closelogin.addEventListener('click',hidelogin)
+        closeregister.addEventListener('click',hideregister)
+        login.addEventListener('click',hidelogin)
+        dangki.addEventListener('click',showregister)
+        logincontain.addEventListener('click',function(event){
+            event.stopPropagation()
+        })
+        register.addEventListener('click',hideregister)
+        register_contain.addEventListener('click',function(event){
+            event.stopPropagation()
+        })
+        transfer1.addEventListener('click',showloginn)
+        transfer2.addEventListener('click',showloginnn)
+    </script>
+    <div class="content" style="margin-top:50px;">
+        <div id="imag">
+            <img src="images/m01.png" alt="Mặt hàng rau" height="260px" width="49.5%">
+            <img src="images/m03.jpg" alt="Mặt hàng thịt" height="260px" width="49.5%">
+            <img src="images/m04.jpg" alt="Mặt hàng đồ ăn vặt" height="260px" width="49.5%">
+            <img src="images/m02.jpg" alt="Mặt hàng nước uống" height="260px" width="49.5%">
+        </div>
+        <article class="km">   
+            <div id="in">
+                <h2>Khuyến mãi!!!</h2>
+                <p>Siêu hot</p>
+            </div>
+            <div id="in1">
+                <img src="" alt="Tri ân">
+                <h3>Tri ân khách hàng</h3>
+                <p>Từ ngày 20/10/2022 đến ngày 31/10/2022, với những hóa đơn có giá trị từ 500k quý khách hàng được tham dự chương trình bốc thăm trúng thưởng cùng với nhiều voucher ưu đãi cho lần mua hàng kế tiếp</p>
+            </div>
+            <div id="in2">
+                <img src="images/teacher's day.jpg" alt="Ngaynhagiao" height="200px" width="250px">
+                <h3>Chào mừng ngày Nhà giáo Việt Nam</h3>
+                <p>Vào ngày 20-11, các mặt hàng trong siêu thị đồng loạt giảm giá từ 5-10%</p>
+            </div>
+        
+        
+        </article>
+        <article id="sp">
+            <h2>Sản phẩm</h2>
+            <div>
+                <h3>Hoa quả</h3>
+                <div id="inline">
+                    <img src="images/thanh long 2.jpg" alt="Thanh Long" >
+                    <p>Thanh Long</p>
+                </div>
+                <div id="inline">
+                    <img src="images/cam.jpg" alt="Cam" >
+                    <p>Cam</p>
+                </div>
+                <div id="inline">
+                    <img src="images/bơ.jpg" alt="Bơ" >
+                    <p>Bơ</p>
+                </div>
+                <hr>
+                <h3>Rau</h3>
+                <div id="inline">
+                    <img src="images/rau muống 2.jpg" alt="Rau muống" >
+                    <p>Rau muống</p>
+                </div>
+                <div id="inline">
+                    <img src="images/rau ngót.jpg" alt="Rau ngót" >
+                    <p>Rau ngót</p>
+                </div>
+                <div id="inline">
+                    <img src="images/bắp cải.jpg" alt="Cải bắp" >
+                    <p>Cải bắp</p>
+                </div>
+                <hr>
+                <h3>Thịt</h3>
+                <div id="inline">
+                    <img src="images/bắp bò.jpg" alt="Bắp bò" >
+                    <p>Bắp bò(500g)</p>
+                </div>
+                <div id="inline">
+                    <img src="images/thăn bò.jpg" alt="Thăn bò" >
+                    <p>Thăn bò(500g)</p>
+                </div>
+                <div id="inline">
+                    <img src="images/ba chỉ heo cắt lát.jpg" alt="Ba chỉ heo cắt lát" >
+                    <p>Ba chỉ heo cắt lát (500g) </p>
+                </div>
+                <hr>
+                <h3>Đồ uống</h3>
+                <div id = "inline">
+                    <img src="images/7up.jpg" alt="7up" >
+                    <p>7up</p>
+                </div>
+                <div id="inline">
+                    <img src="images/strongbow.jpg" alt="Strongbow" >
+                    <p>Strongbow</p>
+                </div>
+                <div id="inline">
+                    <img src="images/coca cola.jpg" alt="Coca-Cola" >
+                    <p>Coca-Cola</p>
+                </div>
+            </div>
+        </article>
+    </div>
+</section>
+</body>
+</html>
